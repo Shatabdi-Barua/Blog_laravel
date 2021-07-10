@@ -18,6 +18,7 @@
         </div>
       </div><!-- /.container-fluid -->
     </section>
+    @include('includes.messages')
   <div class="container-fluid">
     <div class="card card-primary">
               <div class="card-header">
@@ -25,7 +26,8 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              <form action="{{ route('tag.store') }}" method="post">
+              {{ csrf_field() }}
                 <div class="card-body">
                     <div class="row">
                     <div class="col-lg-6">
@@ -46,6 +48,7 @@
         
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>
+                  <a class= "btn btn-success" href="{{ route('tag.index') }}">Back</a>
                 </div>
               </form>
             </div>

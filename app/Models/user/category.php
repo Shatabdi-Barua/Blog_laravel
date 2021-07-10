@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class category extends Model
 {
-    use HasFactory;
+    public function post()
+    {
+        // return $this->belongsTo(Post::class);
+        return $this->belongsToMany('App\Models\user\post', 'category_posts');
+    }    
+    
 }

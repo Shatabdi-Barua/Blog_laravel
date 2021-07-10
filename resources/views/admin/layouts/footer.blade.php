@@ -25,5 +25,8 @@
 <script src="{{ asset('admin/plugins/codemirror/mode/xml/xml.js')}}"></script>
 <script src="{{ asset('admin/plugins/codemirror/mode/htmlmixed/htmlmixed.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{('admin/dist/js/demo.js')}}"></script>
+<script src="{{ asset('admin/dist/js/demo.js')}}"></script>
 <!-- Page specific script -->
+
+@section('footerSection')
+    @show

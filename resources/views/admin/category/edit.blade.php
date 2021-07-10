@@ -26,19 +26,20 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action = "{{ route('category.store') }}" method="post">
+              <form action = "{{ route('category.update', $categories->id) }}" method="post">
               {{ csrf_field() }}
+              {{ method_field('PUT') }}
                 <div class="card-body">
                     <div class="row">
                     <div class="col-lg-6">
                         <div class="form-group">
                             <label for="categoryTitle">Category Title</label>
-                            <input type="text" class="form-control" id="categoryTitle" name="categoryTitle" placeholder="Give a suitable Title...">
+                            <input type="text" class="form-control" id="categoryTitle" name="categoryTitle" value="{{ $categories->name }}">
                         </div>                       
 
                         <div class="form-group">
                             <label for="categorySlug">Category Slug</label>
-                            <input type="text" class="form-control" id="categorySlug" name="categorySlug" placeholder="Slug">
+                            <input type="text" class="form-control" id="categorySlug" name="categorySlug" value="{{ $categories->slug }}">
                         </div>
                     </div>
                     

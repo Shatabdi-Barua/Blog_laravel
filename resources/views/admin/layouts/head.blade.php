@@ -27,3 +27,6 @@
   <link rel="stylesheet" href="{{ asset('admin/plugins/codemirror/theme/monokai.css')}}">
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+  @section('headSection')
+    @show
