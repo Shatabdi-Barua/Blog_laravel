@@ -47,12 +47,24 @@ class PostController extends Controller
             'subtitle' => 'required',
             'slug' => 'required',
             'body' => 'required',
+            'image' => 'required',
         ]);
+        if ($request->hasFile('image'))
+        {
+            $imageName = $request->image->getClientOriginalName();
+            // return $imageName;
+            $imagePath = $request->image->storeAs('public',$imageName);
+            // return $imagePath;
+        }
+        else{
+            return 'No image file';
+        }
         $post = new post;
         $post->title = $request->title;
         $post->subtitle = $request->subtitle;
         $post->slug = $request->slug;
         $post->body = $request->body; 
+        $post->image = $imagePath;
         $post->status = $request->status;       
         $post->save();
         $post->tags()->sync($request->tags);
